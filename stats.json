@@ -1,7 +1,7 @@
 {
-  "updated": "2026-10-23 03:05 CST",
-  "full": 115286,
-  "compact": 114359,
+  "updated": "2026-10-24 03:04 CST",
+  "full": 115314,
+  "compact": 114387,
   "sources": {
     "ACL4SSR ChinaDomain": 606,
     "LOWERTOP RULE-SET Apple.list": 1823,
@@ -23,7 +23,7 @@
     "blackmatrix7 ChinaMax_Domain": 110695,
     "blackmatrix7 China_Domain": 3689,
     "blackmatrix7 Direct": 195,
-    "felixonmars accelerated-domains.china": 109789
+    "felixonmars accelerated-domains.china": 109507
   },
   "failed": []
 }

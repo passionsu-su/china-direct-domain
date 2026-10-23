@@ -2,14 +2,14 @@
 
 合并多个开源规则库的国内直连域名，去掉前缀、正则、关键词和 IP 类规则，统一小写、校验格式后去重，输出一行一个的纯域名。每天北京时间 02:30 由 GitHub Actions 自动更新。
 
-最近更新：2026-10-23 03:05 CST　上游来源：21 个（成功 21，失败 0）
+最近更新：2026-10-24 03:04 CST　上游来源：21 个（成功 21，失败 0）
 
 ## 文件
 
 | 文件 | 说明 | 条数 | 链接 |
 | --- | --- | ---: | --- |
-| china-direct-domains.txt | 精简版（父域名已在列表时去掉子域名） | 114,359 | [raw](https://raw.githubusercontent.com/passionsu-su/china-direct-domain/main/china-direct-domains.txt) |
-| china-direct-domains-full.txt | 完整去重版 | 115,286 | [raw](https://raw.githubusercontent.com/passionsu-su/china-direct-domain/main/china-direct-domains-full.txt) |
+| china-direct-domains.txt | 精简版（父域名已在列表时去掉子域名） | 114,387 | [raw](https://raw.githubusercontent.com/passionsu-su/china-direct-domain/main/china-direct-domains.txt) |
+| china-direct-domains-full.txt | 完整去重版 | 115,314 | [raw](https://raw.githubusercontent.com/passionsu-su/china-direct-domain/main/china-direct-domains-full.txt) |
 | stats.json | 各来源条数与失败来源 | - | [raw](https://raw.githubusercontent.com/passionsu-su/china-direct-domain/main/stats.json) |
 
 ## 上游规则库
@@ -21,7 +21,7 @@
 | 3 | blackmatrix7 China_Domain | [blackmatrix7/ios_rule_script](https://github.com/blackmatrix7/ios_rule_script) | [China_Domain.list](https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Shadowrocket/China/China_Domain.list) | 3,689 | 正常 |
 | 4 | blackmatrix7 ChinaMax_Domain | [blackmatrix7/ios_rule_script](https://github.com/blackmatrix7/ios_rule_script) | [ChinaMax_Domain.list](https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Shadowrocket/ChinaMax/ChinaMax_Domain.list) | 110,695 | 正常 |
 | 5 | blackmatrix7 Direct | [blackmatrix7/ios_rule_script](https://github.com/blackmatrix7/ios_rule_script) | [Direct.list](https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Shadowrocket/Direct/Direct.list) | 195 | 正常 |
-| 6 | felixonmars accelerated-domains.china | [felixonmars/dnsmasq-china-list](https://github.com/felixonmars/dnsmasq-china-list) | [accelerated-domains.china.conf](https://github.com/felixonmars/dnsmasq-china-list/blob/master/accelerated-domains.china.conf) | 109,789 | 正常 |
+| 6 | felixonmars accelerated-domains.china | [felixonmars/dnsmasq-china-list](https://github.com/felixonmars/dnsmasq-china-list) | [accelerated-domains.china.conf](https://github.com/felixonmars/dnsmasq-china-list/blob/master/accelerated-domains.china.conf) | 109,507 | 正常 |
 | 7 | ACL4SSR ChinaDomain | [ACL4SSR/ACL4SSR](https://github.com/ACL4SSR/ACL4SSR) | [ChinaDomain.list](https://github.com/ACL4SSR/ACL4SSR/blob/master/Clash/ChinaDomain.list) | 606 | 正常 |
 | 8 | Loyalsoldier clash-rules direct | [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) | [direct.txt](https://github.com/Loyalsoldier/clash-rules/blob/release/direct.txt) | 110,468 | 正常 |
 | 9 | LOWERTOP RULE-SET Apple.list | [blackmatrix7/ios_rule_script](https://github.com/blackmatrix7/ios_rule_script) | [Apple.list](https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/QuantumultX/Apple/Apple.list) | 1,823 | 正常 |
