@@ -12815,6 +12815,7 @@ app-store.dji.com
 app-store.wang
 app.adjust.com
 app.appsflyer.com
+app.moegirl.org.cn
 app.so
 app0le.com
 app111.com
@@ -20866,6 +20867,7 @@ cdqszz.com
 cdqz.net
 cdrbs.net
 cdrcb.com
+cdrcbank.com
 cdren.net
 cdrich.com
 cdrjob.com
@@ -26942,6 +26944,7 @@ cqyxzz.com
 cqyygz.com
 cqyyjc.com
 cqyysx.com
+cqyyxc.com
 cqyyzy.com
 cqyznews.com
 cqzbcg.com
@@ -51561,6 +51564,7 @@ ibaitiao.com
 ibaizhu.com
 ibanana.club
 ibanbu.com
+ibangbank.com
 ibanggo.com
 ibangkf.com
 ibangtiao.com
@@ -53969,6 +53973,7 @@ ishuw.com
 isi-gf.com
 isiabio.com
 isign.ren
+isigning.com
 isigu.com
 isilent.me
 isilicontech.com
@@ -68844,7 +68849,6 @@ moeelf.com
 moefactory.com
 moefantasy.com
 moefou.org
-moegirl.org
 moegirl.tw
 moehot.com
 moehu.org
@@ -70423,6 +70427,7 @@ nanningyouhua.com
 nannjlnk.com
 nanobody-biolab.com
 nanochrom.com
+nanocorechip.com
 nanoeast.net
 nanoer.net
 nanoinglobal.com
@@ -87880,6 +87885,7 @@ stoneu.com
 stonexp.com
 stor-age.com
 stor-helper.com
+storage.moegirl.org.cn
 storcezon.com
 store.apple.com
 store.apple.com.edgekey.net
