@@ -1,10 +1,10 @@
 {
-  "updated": "2026-10-26 03:14 CST",
-  "full": 115316,
-  "compact": 114389,
+  "updated": "2026-10-27 01:34 CST",
+  "full": 115012,
+  "compact": 114085,
   "sources": {
     "ACL4SSR ChinaDomain": 606,
-    "LOWERTOP RULE-SET Apple.list": 1823,
+    "LOWERTOP RULE-SET Apple.list": 1822,
     "LOWERTOP RULE-SET Baidu.list": 251,
     "LOWERTOP RULE-SET BiliBili.list": 115,
     "LOWERTOP RULE-SET China.list": 3689,
@@ -20,7 +20,7 @@
     "Loyalsoldier china-list": 109507,
     "Loyalsoldier clash-rules direct": 110191,
     "Loyalsoldier direct-list": 110191,
-    "blackmatrix7 ChinaMax_Domain": 110697,
+    "blackmatrix7 ChinaMax_Domain": 110425,
     "blackmatrix7 China_Domain": 3689,
     "blackmatrix7 Direct": 195,
     "felixonmars accelerated-domains.china": 109507
