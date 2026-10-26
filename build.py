@@ -189,7 +189,7 @@ def write_readme(st, urls, order):
     RAW = "https://raw.githubusercontent.com/passionsu-su/china-direct-domain/main/"
     failed_names = {x.split(" (")[0] for x in st["failed"]}
     L = ["# china-direct-domain", "",
-         "合并多个开源规则库的国内直连域名，去掉前缀、正则、关键词和 IP 类规则，统一小写、校验格式后去重，输出一行一个的纯域名。每天北京时间 02:30 由 GitHub Actions 自动更新。", "",
+         "合并多个开源规则库的国内直连域名，去掉前缀、正则、关键词和 IP 类规则，统一小写、校验格式后去重，输出一行一个的纯域名。每月 1 日北京时间 08:30 由 GitHub Actions 自动更新。", "",
          f"最近更新：{st['updated']}　上游来源：{len(order)} 个（成功 {len(order) - len(failed_names)}，失败 {len(failed_names)}）", "",
          "## 文件", "",
          "| 文件 | 说明 | 条数 | 下载 |", "| --- | --- | ---: | --- |",
