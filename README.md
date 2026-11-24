@@ -50,3 +50,13 @@
 - 精简版：父域名已收录时去掉其子域名
 - raw.githubusercontent.com 下载失败时自动改用 jsDelivr 镜像，仍失败的来源 15 秒后重试一次
 - 某个来源失败时用其余来源继续，失败项写入 stats.json；总数少于 50,000 时本次不提交
+
+## 代理客户端规则集（rules/）
+
+由精简版生成，每条表示该域名及其所有子域名，随每月更新自动重建。
+
+| 文件 | 适用客户端 | 用法 |
+| --- | --- | --- |
+| rules/clash.yaml | Clash Premium / mihomo / Clash Verge / Stash | rule-providers：behavior: domain，format: yaml，https://fastly.jsdelivr.net/gh/passionsu-su/china-direct-domain@main/rules/clash.yaml |
+| rules/surge-domainset.txt | Surge / Loon | DOMAIN-SET,https://fastly.jsdelivr.net/gh/passionsu-su/china-direct-domain@main/rules/surge-domainset.txt,DIRECT |
+| rules/singbox.json | sing-box 1.10+ | route.rule_set：type remote，format source，https://fastly.jsdelivr.net/gh/passionsu-su/china-direct-domain@main/rules/singbox.json |
