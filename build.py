@@ -20,6 +20,11 @@ SOURCES = [  # (名称, URL, 格式)
     ("Loyalsoldier clash-rules direct", "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt", "auto"),
 ]
 LAZY = "https://raw.githubusercontent.com/LOWERTOP/Shadowrocket/main/lazy.conf"
+# 国内顶级域名整体直连（clean() 要求含点，这里单独加入）：.cn .中国 .中國 .公司 .网络
+CN_TLDS = ["cn", "xn--fiqs8s", "xn--fiqz9s", "xn--55qx5d", "xn--io0a7i"]
+# 误收清理：MetaCubeX geosite 判为境外（geolocation-!cn）且不在 geosite cn 里的域名剔除
+MC = "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/"
+NOT_CN_URL, CN_URL = MC + "geolocation-!cn.list", MC + "cn.list"
 
 DOM = re.compile(r"^(?=.{1,253}$)([a-z0-9_]([a-z0-9_-]{0,61}[a-z0-9])?\.)*[a-z0-9_]([a-z0-9_-]{0,61}[a-z0-9])?$")
 IPV4 = re.compile(r"^\d+(\.\d+){3}$")
@@ -142,6 +147,17 @@ def main():
     full = set()
     for v in results.values():
         full.update(v)
+    removed = 0
+    try:
+        nl = lambda t: {l.strip().lstrip("+.").lower() for l in t.splitlines() if l.strip() and not l.startswith("#")}
+        not_cn, cn = nl(fetch(NOT_CN_URL)), nl(fetch(CN_URL))
+        under = lambda d, S: any(".".join(d.split(".")[i:]) in S for i in range(d.count(".") + 1))
+        bad = {d for d in full if under(d, not_cn) and not under(d, cn)}
+        full -= bad
+        removed = len(bad)
+    except Exception as e:
+        failed.append(f"MetaCubeX geolocation-!cn 误收清理 ({e})")
+    full.update(CN_TLDS)
     keep = set()
     for d in sorted(full, key=lambda x: x.count(".")):
         parts = d.split(".")
@@ -157,7 +173,7 @@ def main():
         raise SystemExit(f"Too few domains ({len(full)}), aborting. Failed: {failed}")
     upd = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=8)))
     stats = {"updated": upd.strftime("%Y-%m-%d %H:%M CST"), "full": len(full), "compact": len(keep),
-             "sources": {k: len(v) for k, v in sorted(results.items())}, "failed": failed}
+             "sources": {k: len(v) for k, v in sorted(results.items())}, "removed_not_cn": removed, "failed": failed}
     json.dump(stats, open(os.path.join(OUT, "stats.json"), "w"), ensure_ascii=False, indent=2)
     write_readme(stats, urls, [n for n, _, _ in jobs] + ["LOWERTOP lazy.conf 内联 DIRECT"])
     print(json.dumps(stats, ensure_ascii=False, indent=1))
@@ -211,6 +227,8 @@ def write_readme(st, urls, order):
           "- 去掉开头的点和 full: / domain: / +. 前缀",
           "- 丢弃 regexp: / keyword: / DOMAIN-KEYWORD / IP-CIDR / GEOIP / USER-AGENT 等非域名规则",
           "- 统一小写，校验域名格式（需含点，排除纯 IP），去重",
+          "- 国内顶级域名 .cn / .中国 / .中國 / .公司 / .网络 整体加入（精简版里其下子域名随之合并）",
+          f"- 误收清理：MetaCubeX geosite 判为境外（geolocation-!cn）且不在 geosite cn 中的域名剔除，本次剔除 {st.get('removed_not_cn', 0):,} 条",
           "- 精简版：父域名已收录时去掉其子域名",
           "- raw.githubusercontent.com 下载失败时自动改用 jsDelivr 镜像，仍失败的来源 15 秒后重试一次",
           "- 某个来源失败时用其余来源继续，失败项写入 stats.json；总数少于 50,000 时本次不提交", ""]
